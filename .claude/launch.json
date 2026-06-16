@@ -1,0 +1,11 @@
+{
+  "version": "0.0.1",
+  "configurations": [
+    {
+      "name": "markpotentia",
+      "runtimeExecutable": "npm",
+      "runtimeArgs": ["--prefix", "site", "run", "start", "--", "-p", "4123"],
+      "port": 4123
+    }
+  ]
+}
