@@ -4,9 +4,9 @@ node_modules/
 .pnp.js
 
 # Next.js build output
-site/.next/
-site/out/
-site/build/
+.next/
+out/
+build/
 
 # Production
 dist/

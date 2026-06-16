@@ -4,7 +4,7 @@
     {
       "name": "markpotentia",
       "runtimeExecutable": "npm",
-      "runtimeArgs": ["--prefix", "site", "run", "start", "--", "-p", "4123"],
+      "runtimeArgs": ["run", "start", "--", "-p", "4123"],
       "port": 4123
     }
   ]

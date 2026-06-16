@@ -9,7 +9,6 @@ Built with **Next.js 14 (App Router)**, **React 18**, **Tailwind CSS**, and **Fr
 ## Run
 
 ```bash
-cd site
 npm install
 npm run dev      # http://localhost:3000  (development)
 # or
