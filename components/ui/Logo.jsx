@@ -1,15 +1,14 @@
 import Image from 'next/image';
 
-// Official Mark Potentia wordmark rendered as a flat white silhouette on a
-// transparent background — sits directly on the dark navbar / footer for a
-// clean, premium finish (no enclosing chip).
-const RATIO = 900 / 281; // intrinsic aspect of /images/brand/logo-white.png
+// Official Mark Potentia logo (full-colour, transparent background),
+// placed directly on the dark navbar / footer.
+const RATIO = 900 / 277; // intrinsic aspect of /images/brand/logo.png
 
-export default function Logo({ className = '', height = 32, priority = false }) {
+export default function Logo({ className = '', height = 34, priority = false }) {
   const width = Math.round(height * RATIO);
   return (
     <Image
-      src="/images/brand/logo-white.png"
+      src="/images/brand/logo.png"
       alt="Mark Potentia"
       width={width}
       height={height}
