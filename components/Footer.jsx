@@ -8,7 +8,7 @@ export default function Footer() {
         <div className="grid gap-12 lg:grid-cols-12">
           {/* Brand */}
           <div className="lg:col-span-5">
-            <Logo />
+            <Logo height={40} />
             <p className="mt-6 max-w-sm text-sm leading-relaxed text-fg-muted">
               Power infrastructure and energy solutions engineered, manufactured and supported
               in India since 1996. Diesel generating systems from 5 to 750 KVA, built to

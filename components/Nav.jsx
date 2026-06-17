@@ -34,7 +34,7 @@ export default function Nav() {
       >
         <nav className="shell-wide flex h-[72px] items-center justify-between">
           <a href="#top" aria-label="Mark Potentia home">
-            <Logo />
+            <Logo priority height={30} />
           </a>
 
           <div className="hidden items-center gap-8 lg:flex">
