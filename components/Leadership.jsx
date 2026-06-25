@@ -11,8 +11,8 @@ export default function Leadership() {
       <div className="shell-wide">
         <SectionHeading
           eyebrow="Leadership"
-          title="Owner-led, for the long term."
-          intro="Mark Potentia is directed by founders with six decades of combined experience — present, accountable and invested in every client relationship."
+          title="The team at the helm."
+          intro="Mark Potentia is led by a hands-on management team — present, accountable and personally invested in every client relationship."
         />
 
         <div className="mt-14 grid gap-6 md:grid-cols-2">

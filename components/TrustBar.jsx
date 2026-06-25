@@ -12,7 +12,7 @@ export default function TrustBar() {
           <span className="eyebrow text-fg-dim">Trusted by industry leaders</span>
           <p className="max-w-xl text-sm text-fg-muted">
             Powering operations for multinational manufacturers, energy majors and
-            critical-infrastructure operators across India and beyond.
+            critical-infrastructure operators across Tamil Nadu, Kerala and beyond.
           </p>
         </div>
       </div>

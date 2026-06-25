@@ -23,7 +23,7 @@ const jsonLd = {
   url: 'https://markpotentia.in',
   slogan: company.tagline,
   description:
-    'Manufacturer of diesel generator sets, acoustic enclosures and control systems from 5–750 KVA. Authorised Ashok Leyland engine OEM.',
+    'Manufacturer of diesel generator sets, acoustic enclosures and control systems from 15–250 KVA. Authorised Ashok Leyland engine OEM.',
   foundingDate: '1996',
   telephone: company.phone,
   email: company.emails[0],

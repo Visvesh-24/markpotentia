@@ -23,7 +23,7 @@ export default function About() {
                 <p>
                   What began as a light-engineering workshop in Coimbatore has grown into a
                   vertically integrated operation: in-house fabrication, acoustic enclosure
-                  manufacturing, control-panel assembly and a 50+ strong engineering and
+                  manufacturing, control-panel assembly and a 70+ strong engineering and
                   service organisation.
                 </p>
               </Reveal>
@@ -40,7 +40,7 @@ export default function About() {
             <div className="mt-10 flex flex-wrap gap-x-10 gap-y-6">
               {[
                 ['Coimbatore', 'Manufacturing base'],
-                ['5–750 KVA', 'Full capacity band'],
+                ['15–250 KVA', 'Genset capacity band'],
                 ['Ashok Leyland', 'Authorised engine OEM'],
               ].map(([k, v]) => (
                 <Reveal key={k} variant="fade" className="border-l border-accent/40 pl-4">

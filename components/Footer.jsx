@@ -11,7 +11,7 @@ export default function Footer() {
             <Logo height={40} />
             <p className="mt-6 max-w-sm text-sm leading-relaxed text-fg-muted">
               Power infrastructure and energy solutions engineered, manufactured and supported
-              in India since 1996. Diesel generating systems from 5 to 750 KVA, built to
+              since 1996. Diesel generating systems from 15 to 250 KVA, built to
               original-equipment standard.
             </p>
             <div className="mt-7 flex flex-wrap gap-3">

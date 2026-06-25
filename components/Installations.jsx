@@ -50,11 +50,11 @@ export default function Installations() {
           <SectionHeading
             eyebrow="Installations & Projects"
             title="3,000+ sites, commissioned and supported."
-            intro="A selection from three decades of standby plant, mobile units and control rooms delivered across India."
+            intro="A selection from three decades of standby plant, enclosures and control rooms delivered across Tamil Nadu and Kerala."
           />
           <div className="hidden items-center gap-3 md:flex">
             <span className="h-display text-5xl text-fg">3K+</span>
-            <span className="max-w-[120px] text-xs text-fg-dim">Installations across the country</span>
+            <span className="max-w-[120px] text-xs text-fg-dim">Installations across Tamil Nadu &amp; Kerala</span>
           </div>
         </div>
 

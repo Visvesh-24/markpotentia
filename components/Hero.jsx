@@ -114,9 +114,9 @@ export default function Hero() {
             transition={{ duration: 0.8, delay: 1.05, ease }}
             className="mx-auto mt-7 max-w-2xl text-balance text-base leading-relaxed text-fg-muted md:text-lg"
           >
-            For 29 years, Mark Potentia has designed, manufactured and supported
-            diesel generating systems from 5 to 750 KVA — built to original-equipment
-            standard and trusted across India&apos;s most demanding industries.
+            For three decades, Mark Potentia has designed, manufactured and supported
+            diesel generating systems from 15 to 250 KVA — built to original-equipment
+            standard and trusted across Tamil Nadu and Kerala.
           </motion.p>
 
           {/* CTAs */}
@@ -142,12 +142,19 @@ export default function Hero() {
             initial={{ opacity: 0, y: 28 }}
             animate={{ opacity: 1, y: 0 }}
             transition={{ duration: 0.9, delay: 1.4, ease }}
-            className="mx-auto mt-16 grid max-w-4xl grid-cols-2 gap-px overflow-hidden rounded-2xl border border-line bg-line md:grid-cols-4"
+            className="mx-auto mt-16 grid max-w-3xl grid-cols-1 gap-px overflow-hidden rounded-2xl border border-line bg-line sm:grid-cols-3"
           >
             {heroStats.map((s) => (
               <div key={s.label} className="bg-base/70 px-6 py-6 backdrop-blur-sm">
                 <div className="h-display text-3xl text-fg md:text-4xl">
-                  <Counter to={s.value} suffix={s.suffix} />
+                  {s.text ? (
+                    <>
+                      {s.text}
+                      {s.suffix}
+                    </>
+                  ) : (
+                    <Counter to={s.value} suffix={s.suffix} />
+                  )}
                 </div>
                 <div className="mt-2 text-xs text-fg-dim">{s.label}</div>
               </div>

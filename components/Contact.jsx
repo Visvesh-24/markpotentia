@@ -13,7 +13,7 @@ const fields = [
   { name: 'phone', label: 'Phone', type: 'tel', col: 'sm:col-span-1' },
 ];
 
-const capacities = ['5–62.5 KVA', '82.5–250 KVA', '320–500 KVA', '600–750 KVA', 'Not sure yet'];
+const capacities = ['15–62.5 KVA', '75–160 KVA', '180–250 KVA', 'Not sure yet'];
 
 export default function Contact() {
   const [sent, setSent] = useState(false);

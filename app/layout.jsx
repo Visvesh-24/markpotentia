@@ -27,7 +27,7 @@ export const metadata = {
     template: '%s · Mark Potentia',
   },
   description:
-    'Mark Potentia engineers, manufactures and supports diesel generator sets, acoustic enclosures and control systems from 5–750 KVA. 29+ years, 3,000+ installations, authorised Ashok Leyland engine OEM.',
+    'Mark Potentia engineers, manufactures and supports diesel generator sets, acoustic enclosures and control systems from 15–250 KVA. 30+ years, 3,000+ installations, authorised Ashok Leyland engine OEM serving Tamil Nadu & Kerala.',
   keywords: [
     'diesel generators',
     'genset manufacturer',
@@ -42,7 +42,7 @@ export const metadata = {
   openGraph: {
     title: 'Mark Potentia — Power Infrastructure & Energy Solutions',
     description:
-      'Engineering reliable power for mission-critical operations. 29+ years, 3,000+ installations across India.',
+      'Engineering reliable power for mission-critical operations. 30+ years, 3,000+ installations across Tamil Nadu & Kerala.',
     url: siteUrl,
     siteName: 'Mark Potentia',
     type: 'website',

@@ -76,7 +76,7 @@ export default function Products() {
           <SectionHeading
             eyebrow="Products & Solutions"
             title="A complete power portfolio, single-source."
-            intro="From compact mobile sets to 750 KVA standby plant — every product is engineered, built and supported in-house."
+            intro="From 15–250 KVA generating sets to acoustic enclosures, control systems and sheet-metal fabrication — every product is engineered, built and supported in-house."
           />
           <Reveal variant="fade" className="hidden md:block">
             <a href="#contact" className="btn-ghost text-sm">
@@ -87,8 +87,8 @@ export default function Products() {
 
         <Reveal variant="fade" className="mt-14">
           <div className="grid gap-6 md:grid-cols-2">
-            {products.map((p, i) => (
-              <ProductCard key={p.id} p={p} featured={i === 0} />
+            {products.map((p) => (
+              <ProductCard key={p.id} p={p} featured={false} />
             ))}
           </div>
         </Reveal>

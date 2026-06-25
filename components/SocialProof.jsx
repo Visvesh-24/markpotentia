@@ -6,7 +6,7 @@ import Reveal from './ui/Reveal';
 
 const markers = [
   ['1,111+', 'Premium enterprise clients'],
-  ['29 yrs', 'Unbroken operating record'],
+  ['30 yrs', 'Unbroken operating record'],
   ['Multi-national', 'Manufacturing & energy accounts'],
 ];
 
@@ -33,7 +33,7 @@ export default function SocialProof() {
             <p className="mt-6 h-display text-balance text-[clamp(1.6rem,3.6vw,2.8rem)] leading-tight text-fg">
               &ldquo;When power cannot fail, organisations choose engineering they can hold
               accountable. That standard is what we have manufactured for{' '}
-              <span className="bg-accent-grad bg-clip-text text-transparent">29 years</span>.&rdquo;
+              <span className="bg-accent-grad bg-clip-text text-transparent">three decades</span>.&rdquo;
             </p>
           </Reveal>
           <Reveal delay={0.1}>
