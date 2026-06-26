@@ -9,7 +9,7 @@ import { company } from '@/lib/data';
 const fields = [
   { name: 'name', label: 'Full name', type: 'text', col: 'sm:col-span-1' },
   { name: 'company', label: 'Company', type: 'text', col: 'sm:col-span-1' },
-  { name: 'email', label: 'Work email', type: 'email', col: 'sm:col-span-1' },
+  { name: 'email', label: 'Email', type: 'email', col: 'sm:col-span-1' },
   { name: 'phone', label: 'Phone', type: 'tel', col: 'sm:col-span-1' },
 ];
 
@@ -65,18 +65,26 @@ export default function Contact() {
             </div>
 
             {/* Map placeholder */}
-            <div className="relative mt-6 h-44 overflow-hidden rounded-2xl border border-line bg-surface-1">
-              <div className="absolute inset-0 bg-grid-fade bg-[size:32px_32px] opacity-50" />
-              <div className="absolute inset-0 bg-gradient-to-br from-accent/5 to-signal/5" />
-              <div className="absolute left-1/2 top-1/2 -translate-x-1/2 -translate-y-1/2 text-center">
-                <span className="relative flex h-3 w-3 mx-auto">
-                  <span className="absolute inline-flex h-full w-full animate-ping rounded-full bg-accent/60" />
-                  <span className="relative inline-flex h-3 w-3 rounded-full bg-accent" />
-                </span>
-                <div className="mt-3 font-mono text-[11px] uppercase tracking-label text-fg-muted">
-                  {company.address}
-                </div>
-              </div>
+            <div className="group relative mt-6 h-48 overflow-hidden rounded-2xl border border-line bg-surface-1">
+              <iframe
+                title="Mark Potentia location"
+                src={company.mapEmbed}
+                loading="lazy"
+                referrerPolicy="no-referrer-when-downgrade"
+                className="h-full w-full"
+                style={{ border: 0, filter: 'invert(0.92) hue-rotate(180deg) saturate(0.8)' }}
+              />
+              <a
+                href={company.mapUrl}
+                target="_blank"
+                rel="noopener noreferrer"
+                className="absolute bottom-3 right-3 inline-flex items-center gap-1.5 rounded-full border border-line bg-ink/80 px-3 py-1.5 font-mono text-[10px] uppercase tracking-label text-fg backdrop-blur transition-colors hover:border-accent/50"
+              >
+                Open in Maps
+                <svg width="11" height="11" viewBox="0 0 16 16" fill="none">
+                  <path d="M5 11L11 5M11 5H5M11 5v6" stroke="currentColor" strokeWidth="1.5" strokeLinecap="round" strokeLinejoin="round" />
+                </svg>
+              </a>
             </div>
           </div>
 

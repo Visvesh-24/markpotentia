@@ -6,8 +6,7 @@ import Reveal from './ui/Reveal';
 
 const markers = [
   ['1,111+', 'Premium enterprise clients'],
-  ['30 yrs', 'Unbroken operating record'],
-  ['Multi-national', 'Manufacturing & energy accounts'],
+  ['31 yrs', 'Unbroken operating record'],
 ];
 
 export default function SocialProof() {
@@ -33,7 +32,7 @@ export default function SocialProof() {
             <p className="mt-6 h-display text-balance text-[clamp(1.6rem,3.6vw,2.8rem)] leading-tight text-fg">
               &ldquo;When power cannot fail, organisations choose engineering they can hold
               accountable. That standard is what we have manufactured for{' '}
-              <span className="bg-accent-grad bg-clip-text text-transparent">three decades</span>.&rdquo;
+              <span className="bg-accent-grad bg-clip-text text-transparent">31 years</span>.&rdquo;
             </p>
           </Reveal>
           <Reveal delay={0.1}>
@@ -48,7 +47,7 @@ export default function SocialProof() {
           whileInView={{ opacity: 1, y: 0 }}
           viewport={{ once: true }}
           transition={{ duration: 0.7 }}
-          className="mx-auto mt-16 grid max-w-3xl gap-px overflow-hidden rounded-2xl border border-line bg-line sm:grid-cols-3"
+          className="mx-auto mt-16 grid max-w-xl gap-px overflow-hidden rounded-2xl border border-line bg-line sm:grid-cols-2"
         >
           {markers.map(([k, v]) => (
             <div key={v} className="bg-base/80 px-6 py-7 text-center backdrop-blur-sm">

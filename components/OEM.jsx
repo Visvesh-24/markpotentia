@@ -38,13 +38,12 @@ export default function OEM() {
             <Reveal delay={0.08}>
               <p className="mt-6 max-w-xl text-base leading-relaxed text-fg-muted">
                 Mark Potentia is an authorised Ashok Leyland OEM, building 15–250 KVA
-                generating sets to the engine maker&apos;s own specification rather than
-                assembling from mixed sourcing. Engine integration, enclosure fabrication,
-                control panels and load testing are completed in-house under one quality
-                system — every set traceable from raw material to commissioning, and backed
-                by our own service team across Tamil Nadu and Kerala. The same sheet-metal
-                fabrication discipline supplies enclosures and assemblies to clients across
-                India and beyond.
+                generating sets to the engine maker&apos;s own specification and quality gates.
+                Engine integration, enclosure fabrication, control panels and load testing are
+                completed in-house under one quality system — every set traceable from raw
+                material to commissioning, and backed by our own service team across Tamil Nadu
+                and Kerala. The same sheet-metal fabrication discipline supplies enclosures and
+                assemblies to clients across India and beyond.
               </p>
             </Reveal>
 

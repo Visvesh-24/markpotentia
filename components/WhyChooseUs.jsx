@@ -3,8 +3,7 @@
 import Image from 'next/image';
 import SectionHeading from './ui/SectionHeading';
 import Reveal, { Stagger, StaggerItem } from './ui/Reveal';
-import Counter from './ui/Counter';
-import { differentiators, trustStats } from '@/lib/data';
+import { differentiators } from '@/lib/data';
 
 export default function WhyChooseUs() {
   return (
@@ -16,16 +15,18 @@ export default function WhyChooseUs() {
             <SectionHeading
               eyebrow="Why Mark Potentia"
               title="Accountability that survives the warranty period."
-              intro="Mixed-source assemblers disappear after handover. We own the engineering, the build and the lifecycle — so reliability is a contractual reality, not a brochure claim."
+              intro="Many suppliers disappear after handover. We own the engineering, the build and the lifecycle — so reliability is a contractual reality, not a brochure claim."
             />
-            <Stagger className="mt-12 grid gap-px overflow-hidden rounded-2xl border border-line bg-line sm:grid-cols-2">
+            <Stagger className="mt-12 grid gap-px overflow-hidden rounded-2xl border border-line bg-line">
               {differentiators.map((d) => (
-                <StaggerItem key={d.k} className="group bg-base p-7 transition-colors hover:bg-surface-1">
-                  <div className="flex items-baseline gap-3">
-                    <span className="font-mono text-xs text-accent">{d.k}</span>
-                    <h3 className="font-display text-base font-medium text-fg">{d.title}</h3>
+                <StaggerItem key={d.k} className="group bg-base p-7 transition-colors hover:bg-surface-1 md:p-8">
+                  <div className="flex items-baseline gap-4">
+                    <span className="font-mono text-sm text-accent">{d.k}</span>
+                    <h3 className="font-display text-lg font-medium text-fg">{d.title}</h3>
                   </div>
-                  <p className="mt-3 text-sm leading-relaxed text-fg-muted">{d.body}</p>
+                  <p className="mt-3 max-w-xl text-sm leading-relaxed text-fg-muted md:pl-9">
+                    {d.body}
+                  </p>
                 </StaggerItem>
               ))}
             </Stagger>
@@ -50,19 +51,6 @@ export default function WhyChooseUs() {
               </div>
             </Reveal>
           </div>
-        </div>
-
-        {/* Stat band */}
-        <div className="mt-20 grid gap-px overflow-hidden rounded-2xl border border-line bg-line sm:grid-cols-2 lg:grid-cols-4">
-          {trustStats.map((s, i) => (
-            <Reveal key={s.label} delay={i * 0.07} className="bg-surface-1 p-8">
-              <div className="h-display text-4xl text-fg md:text-5xl">
-                <Counter to={s.value} suffix={s.suffix} />
-              </div>
-              <div className="mt-3 font-display text-sm font-medium text-fg">{s.label}</div>
-              <div className="mt-1 text-xs leading-relaxed text-fg-dim">{s.sub}</div>
-            </Reveal>
-          ))}
         </div>
       </div>
     </section>

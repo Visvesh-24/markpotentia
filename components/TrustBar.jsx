@@ -11,8 +11,8 @@ export default function TrustBar() {
         <div className="flex flex-col items-center gap-2 text-center">
           <span className="eyebrow text-fg-dim">Trusted by industry leaders</span>
           <p className="max-w-xl text-sm text-fg-muted">
-            Powering operations for multinational manufacturers, energy majors and
-            critical-infrastructure operators across Tamil Nadu, Kerala and beyond.
+            Trusted power solutions for Manufacturers, Healthcare, Industrial Businesses,
+            and Enterprises across Tamil Nadu and Kerala.
           </p>
         </div>
       </div>
