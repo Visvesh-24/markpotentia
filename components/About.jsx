@@ -51,48 +51,44 @@ export default function About() {
             </div>
           </div>
 
-          {/* Right: image stack */}
+          {/* Right: image stack — stretches to match the left column height */}
           <div className="lg:col-span-6">
-            <div className="flex flex-col gap-4">
-              {/* Our genset — top, shown in full (no cropping) */}
-              <Reveal variant="scale" className="overflow-hidden rounded-2xl border border-line bg-ink">
+            <div className="flex h-full flex-col gap-4">
+              {/* Our genset — full unit visible, no cropping (tile matches the 7:3 image) */}
+              <Reveal
+                variant="scale"
+                className="aspect-[7/3] w-full overflow-hidden rounded-2xl border border-line bg-ink"
+              >
                 <Image
                   src="/images/products/leypower-40kva-dark.jpg"
                   alt="LEYPOWER 40 kVA Ashok Leyland diesel generator by Mark Potentia"
                   width={1400}
                   height={600}
-                  className="h-full w-full object-contain"
+                  className="h-full w-full object-cover"
                 />
               </Reveal>
-              {/* Supporting fabrication imagery */}
-              <div className="grid grid-cols-3 gap-4">
-                <Reveal variant="scale" delay={0.12} className="aspect-[3/4] overflow-hidden rounded-2xl border border-line">
-                  <Image
-                    src="/images/manufacturing/facility.jpg"
-                    alt="Mark Potentia manufacturing facility"
-                    width={900}
-                    height={1200}
-                    className="h-full w-full object-cover"
-                  />
-                </Reveal>
-                <Reveal variant="scale" delay={0.2} className="aspect-[3/4] overflow-hidden rounded-2xl border border-line">
-                  <Image
-                    src="/images/manufacturing/cutting-sparks.jpg"
-                    alt="Precision metal fabrication"
-                    width={900}
-                    height={1200}
-                    className="h-full w-full object-cover"
-                  />
-                </Reveal>
-                <Reveal variant="scale" delay={0.28} className="aspect-[3/4] overflow-hidden rounded-2xl border border-line">
-                  <Image
-                    src="/images/manufacturing/engine-assembly.png"
-                    alt="Engine integration and assembly"
-                    width={900}
-                    height={1200}
-                    className="h-full w-full object-cover"
-                  />
-                </Reveal>
+              {/* Supporting fabrication imagery — fills the remaining height */}
+              <div className="grid grid-cols-3 gap-4 lg:flex lg:min-h-0 lg:flex-1">
+                {[
+                  ['/images/manufacturing/facility.jpg', 'Mark Potentia manufacturing facility', 0.12],
+                  ['/images/manufacturing/cutting-sparks.jpg', 'Precision metal fabrication', 0.2],
+                  ['/images/manufacturing/engine-assembly.png', 'Engine integration and assembly', 0.28],
+                ].map(([src, alt, d]) => (
+                  <Reveal
+                    key={src}
+                    variant="scale"
+                    delay={d}
+                    className="aspect-[3/4] overflow-hidden rounded-2xl border border-line lg:aspect-auto lg:h-full lg:flex-1"
+                  >
+                    <Image
+                      src={src}
+                      alt={alt}
+                      width={700}
+                      height={900}
+                      className="h-full w-full object-cover"
+                    />
+                  </Reveal>
+                ))}
               </div>
             </div>
           </div>
