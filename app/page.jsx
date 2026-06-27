@@ -1,6 +1,7 @@
 import ScrollProgress from '@/components/ui/ScrollProgress';
 import Nav from '@/components/Nav';
 import Hero from '@/components/Hero';
+import HeroStats from '@/components/HeroStats';
 import TrustBar from '@/components/TrustBar';
 import About from '@/components/About';
 import Products from '@/components/Products';
@@ -54,6 +55,7 @@ export default function Home() {
       <Nav />
       <main>
         <Hero />
+        <HeroStats />
         <TrustBar />
         <About />
         <Products />

@@ -2,8 +2,7 @@
 
 import Image from 'next/image';
 import { motion } from 'framer-motion';
-import Counter from './ui/Counter';
-import { heroStats, company } from '@/lib/data';
+import { company } from '@/lib/data';
 
 const ease = [0.22, 0.7, 0.3, 1];
 
@@ -40,7 +39,7 @@ export default function Hero() {
       <div className="absolute inset-0 bg-gradient-to-t from-ink via-transparent to-ink/70" />
       <div className="absolute inset-0 bg-grid-fade bg-[size:64px_64px] opacity-25" />
       {/* Accent glow behind the floating genset */}
-      <div className="pointer-events-none absolute right-[6%] top-1/2 hidden h-[460px] w-[560px] -translate-y-1/2 rounded-full bg-accent/15 blur-[150px] lg:block" />
+      <div className="pointer-events-none absolute right-[8%] top-1/2 hidden h-[420px] w-[460px] -translate-y-1/2 rounded-full bg-accent/15 blur-[150px] lg:block" />
 
       {/* Intro curtain */}
       <motion.div
@@ -50,9 +49,9 @@ export default function Hero() {
         className="pointer-events-none absolute inset-0 z-20 bg-ink"
       />
 
-      <div className="shell-wide relative z-10 grid min-h-screen items-center gap-10 pt-28 pb-16 lg:grid-cols-12 lg:gap-8">
-        {/* LEFT — copy (left-aligned on all devices) */}
-        <div className="lg:col-span-6 xl:col-span-6">
+      <div className="shell-wide relative z-10 grid min-h-screen items-center gap-10 pt-28 pb-16 lg:grid-cols-10 lg:gap-10">
+        {/* LEFT — copy (70%, left-aligned on all devices) */}
+        <div className="lg:col-span-7">
           {/* Eyebrow */}
           <motion.div
             initial={{ opacity: 0, y: 14 }}
@@ -68,7 +67,7 @@ export default function Hero() {
 
           {/* Headline */}
           <h1 className="mt-6">
-            <span className="h-display block text-[clamp(2.1rem,7.6vw,2.7rem)] leading-[1.08] text-fg lg:text-[clamp(2.4rem,3.8vw,3.7rem)] lg:leading-[1.05]">
+            <span className="h-display block text-[clamp(2.1rem,7.6vw,2.7rem)] leading-[1.08] text-fg lg:text-[clamp(2.6rem,4vw,4rem)] lg:leading-[1.04]">
               {lines.map((line, li) => (
                 <span key={li} className="block">
                   {line.map((w, wi) => {
@@ -128,44 +127,20 @@ export default function Hero() {
               Explore Solutions
             </a>
           </motion.div>
-
-          {/* Stat strip */}
-          <motion.div
-            initial={{ opacity: 0, y: 28 }}
-            animate={{ opacity: 1, y: 0 }}
-            transition={{ duration: 0.9, delay: 1.4, ease }}
-            className="mt-12 grid max-w-xl grid-cols-3 gap-px overflow-hidden rounded-2xl border border-line bg-line"
-          >
-            {heroStats.map((s) => (
-              <div key={s.label} className="bg-base/70 px-4 py-5 backdrop-blur-sm sm:px-6">
-                <div className="h-display text-2xl text-fg sm:text-3xl">
-                  {s.text ? (
-                    <>
-                      {s.text}
-                      {s.suffix}
-                    </>
-                  ) : (
-                    <Counter to={s.value} suffix={s.suffix} />
-                  )}
-                </div>
-                <div className="mt-1.5 text-[11px] leading-tight text-fg-dim">{s.label}</div>
-              </div>
-            ))}
-          </motion.div>
         </div>
 
-        {/* RIGHT — floating genset */}
-        <div className="relative flex items-center justify-center lg:col-span-6">
+        {/* RIGHT — floating genset (30%) */}
+        <div className="relative flex items-center justify-center lg:col-span-3">
           <motion.div
             initial={{ opacity: 0, x: 40 }}
             animate={{ opacity: 1, x: 0 }}
             transition={{ duration: 1, delay: 0.7, ease }}
-            className="relative w-full max-w-[300px] sm:max-w-[420px] lg:max-w-[560px]"
+            className="relative mx-auto w-full max-w-[300px] sm:max-w-[380px] lg:max-w-none"
           >
             {/* soft floor glow */}
-            <div className="pointer-events-none absolute inset-x-6 bottom-2 h-10 rounded-[50%] bg-black/50 blur-2xl" />
+            <div className="pointer-events-none absolute inset-x-6 bottom-2 h-8 rounded-[50%] bg-black/50 blur-2xl" />
             <motion.div
-              animate={{ y: [0, -20, 0] }}
+              animate={{ y: [0, -18, 0] }}
               transition={{ duration: 4.5, repeat: Infinity, ease: 'easeInOut' }}
             >
               <Image
@@ -186,7 +161,7 @@ export default function Hero() {
         initial={{ opacity: 0 }}
         animate={{ opacity: 1 }}
         transition={{ delay: 1.8, duration: 0.8 }}
-        className="absolute bottom-6 left-1/2 z-10 hidden -translate-x-1/2 flex-col items-center gap-2 md:flex"
+        className="absolute bottom-5 left-1/2 z-10 hidden -translate-x-1/2 flex-col items-center gap-2 md:flex"
       >
         <span className="font-mono text-[10px] uppercase tracking-label text-fg-dim">Scroll</span>
         <span className="relative flex h-9 w-5 justify-center rounded-full border border-line">
