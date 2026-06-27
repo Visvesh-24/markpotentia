@@ -7,8 +7,7 @@ import { heroStats, company } from '@/lib/data';
 
 const ease = [0.22, 0.7, 0.3, 1];
 
-// Headline split into FIXED lines (always 3) — each line stays on one row.
-// Font scales fluidly so the longest line never overflows at any width.
+// Headline split into FIXED lines — each line is a block; words reveal in turn.
 const lines = [
   [{ t: 'Engineering' }, { t: 'reliable' }],
   [{ t: 'power' }, { t: 'for' }, { t: 'mission-critical', accent: true }],
@@ -32,23 +31,18 @@ export default function Hero() {
           fill
           priority
           sizes="100vw"
-          className="object-cover object-center opacity-50"
+          className="object-cover object-center opacity-40"
         />
       </motion.div>
 
-      {/* Center-weighted overlays */}
-      <div className="absolute inset-0 bg-gradient-to-b from-ink/85 via-ink/55 to-ink" />
-      <div
-        className="absolute inset-0"
-        style={{
-          background:
-            'radial-gradient(115% 80% at 50% 35%, transparent 30%, rgba(6,9,15,0.85) 100%)',
-        }}
-      />
-      <div className="absolute inset-0 bg-grid-fade bg-[size:64px_64px] opacity-30" />
-      <div className="pointer-events-none absolute left-1/2 top-1/3 h-[520px] w-[520px] -translate-x-1/2 rounded-full bg-accent/15 blur-[170px]" />
+      {/* Left-weighted overlays for text readability */}
+      <div className="absolute inset-0 bg-gradient-to-r from-ink via-ink/85 to-ink/60" />
+      <div className="absolute inset-0 bg-gradient-to-t from-ink via-transparent to-ink/70" />
+      <div className="absolute inset-0 bg-grid-fade bg-[size:64px_64px] opacity-25" />
+      {/* Accent glow behind the floating genset */}
+      <div className="pointer-events-none absolute right-[6%] top-1/2 hidden h-[460px] w-[560px] -translate-y-1/2 rounded-full bg-accent/15 blur-[150px] lg:block" />
 
-      {/* Intro curtain - fades away to reveal */}
+      {/* Intro curtain */}
       <motion.div
         initial={{ opacity: 1 }}
         animate={{ opacity: 0 }}
@@ -56,27 +50,27 @@ export default function Hero() {
         className="pointer-events-none absolute inset-0 z-20 bg-ink"
       />
 
-      <div className="relative z-10 flex min-h-screen items-center justify-center">
-        <div className="shell-wide w-full pt-28 pb-16 text-center">
+      <div className="shell-wide relative z-10 grid min-h-screen items-center gap-10 pt-28 pb-16 lg:grid-cols-12 lg:gap-8">
+        {/* LEFT — copy (left-aligned on all devices) */}
+        <div className="lg:col-span-6 xl:col-span-6">
           {/* Eyebrow */}
           <motion.div
             initial={{ opacity: 0, y: 14 }}
             animate={{ opacity: 1, y: 0 }}
             transition={{ duration: 0.7, delay: 0.35, ease }}
-            className="flex items-center justify-center gap-3"
+            className="flex items-center gap-3"
           >
-            <span className="h-px w-8 bg-accent/70 md:w-10" />
+            <span className="h-px w-10 bg-accent/70" />
             <span className="eyebrow text-fg-muted">
               {company.positioning} · Since 1996
             </span>
-            <span className="h-px w-8 bg-accent/70 md:w-10" />
           </motion.div>
 
-          {/* Headline - fixed 3 lines, masked word reveal */}
-          <h1 className="mt-7">
-            <span className="h-display block text-[clamp(2rem,8.2vw,2.6rem)] leading-[1.12] text-fg md:text-[clamp(1.55rem,5.4vw,4.4rem)] md:leading-[1.05]">
+          {/* Headline */}
+          <h1 className="mt-6">
+            <span className="h-display block text-[clamp(2.1rem,7.6vw,2.7rem)] leading-[1.08] text-fg lg:text-[clamp(2.4rem,3.8vw,3.7rem)] lg:leading-[1.05]">
               {lines.map((line, li) => (
-                <span key={li} className="block whitespace-normal md:whitespace-nowrap">
+                <span key={li} className="block">
                   {line.map((w, wi) => {
                     idx += 1;
                     const delay = 0.5 + idx * 0.085;
@@ -92,9 +86,7 @@ export default function Hero() {
                           animate={{ y: 0 }}
                           transition={{ duration: 0.85, delay, ease }}
                           className={`inline-block ${
-                            w.accent
-                              ? 'bg-accent-grad bg-clip-text text-transparent'
-                              : ''
+                            w.accent ? 'bg-accent-grad bg-clip-text text-transparent' : ''
                           }`}
                         >
                           {w.t}
@@ -112,7 +104,7 @@ export default function Hero() {
             initial={{ opacity: 0, y: 18 }}
             animate={{ opacity: 1, y: 0 }}
             transition={{ duration: 0.8, delay: 1.05, ease }}
-            className="mx-auto mt-7 max-w-2xl text-balance text-base leading-relaxed text-fg-muted md:text-lg"
+            className="mt-7 max-w-xl text-base leading-relaxed text-fg-muted md:text-lg"
           >
             For three decades, Mark Potentia has designed, manufactured and supported
             diesel generating systems from 15 to 250 KVA — built to original-equipment
@@ -124,7 +116,7 @@ export default function Hero() {
             initial={{ opacity: 0, y: 16 }}
             animate={{ opacity: 1, y: 0 }}
             transition={{ duration: 0.8, delay: 1.2, ease }}
-            className="mt-9 flex flex-wrap items-center justify-center gap-4"
+            className="mt-9 flex flex-wrap items-center gap-4"
           >
             <a href="#contact" className="btn-primary">
               Get a Consultation
@@ -142,11 +134,11 @@ export default function Hero() {
             initial={{ opacity: 0, y: 28 }}
             animate={{ opacity: 1, y: 0 }}
             transition={{ duration: 0.9, delay: 1.4, ease }}
-            className="mx-auto mt-16 grid max-w-3xl grid-cols-1 gap-px overflow-hidden rounded-2xl border border-line bg-line sm:grid-cols-3"
+            className="mt-12 grid max-w-xl grid-cols-3 gap-px overflow-hidden rounded-2xl border border-line bg-line"
           >
             {heroStats.map((s) => (
-              <div key={s.label} className="bg-base/70 px-6 py-6 backdrop-blur-sm">
-                <div className="h-display text-3xl text-fg md:text-4xl">
+              <div key={s.label} className="bg-base/70 px-4 py-5 backdrop-blur-sm sm:px-6">
+                <div className="h-display text-2xl text-fg sm:text-3xl">
                   {s.text ? (
                     <>
                       {s.text}
@@ -156,9 +148,35 @@ export default function Hero() {
                     <Counter to={s.value} suffix={s.suffix} />
                   )}
                 </div>
-                <div className="mt-2 text-xs text-fg-dim">{s.label}</div>
+                <div className="mt-1.5 text-[11px] leading-tight text-fg-dim">{s.label}</div>
               </div>
             ))}
+          </motion.div>
+        </div>
+
+        {/* RIGHT — floating genset */}
+        <div className="relative flex items-center justify-center lg:col-span-6">
+          <motion.div
+            initial={{ opacity: 0, x: 40 }}
+            animate={{ opacity: 1, x: 0 }}
+            transition={{ duration: 1, delay: 0.7, ease }}
+            className="relative w-full max-w-[300px] sm:max-w-[420px] lg:max-w-[560px]"
+          >
+            {/* soft floor glow */}
+            <div className="pointer-events-none absolute inset-x-6 bottom-2 h-10 rounded-[50%] bg-black/50 blur-2xl" />
+            <motion.div
+              animate={{ y: [0, -20, 0] }}
+              transition={{ duration: 4.5, repeat: Infinity, ease: 'easeInOut' }}
+            >
+              <Image
+                src="/images/products/hero-img.png"
+                alt="LEYPOWER 15 kVA Ashok Leyland diesel generator by Mark Potentia"
+                width={1157}
+                height={859}
+                priority
+                className="h-auto w-full drop-shadow-[0_30px_50px_rgba(0,0,0,0.55)]"
+              />
+            </motion.div>
           </motion.div>
         </div>
       </div>
