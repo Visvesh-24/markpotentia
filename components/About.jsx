@@ -54,16 +54,16 @@ export default function About() {
           {/* Right: image stack — stretches to match the left column height */}
           <div className="lg:col-span-6">
             <div className="flex h-full flex-col gap-4">
-              {/* Our genset — full unit visible, no cropping (tile matches the 7:3 image) */}
+              {/* Our genset — full unit visible (16:9 tile) */}
               <Reveal
                 variant="scale"
-                className="aspect-[7/3] w-full overflow-hidden rounded-2xl border border-line bg-ink"
+                className="aspect-video w-full overflow-hidden rounded-2xl border border-line bg-ink"
               >
                 <Image
-                  src="/images/products/leypower-40kva-dark.jpg"
+                  src="/images/products/genset.png"
                   alt="LEYPOWER 40 kVA Ashok Leyland diesel generator by Mark Potentia"
-                  width={1400}
-                  height={600}
+                  width={1280}
+                  height={683}
                   className="h-full w-full object-cover"
                 />
               </Reveal>
