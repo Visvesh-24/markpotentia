@@ -83,9 +83,9 @@ export default function About() {
               </Reveal>
               <Reveal variant="scale" delay={0.28} className="col-span-3 row-span-2 overflow-hidden rounded-2xl border border-line">
                 <Image
-                  src="/images/products/control-panel-closeup.jpeg"
-                  alt="Control panel detail"
-                  width={1200}
+                  src="/images/products/leypower-40kva-dark.jpg"
+                  alt="LEYPOWER 40 kVA Ashok Leyland diesel generator by Mark Potentia"
+                  width={1400}
                   height={600}
                   className="h-full w-full object-cover"
                 />
