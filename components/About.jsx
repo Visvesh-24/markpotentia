@@ -53,43 +53,47 @@ export default function About() {
 
           {/* Right: image stack */}
           <div className="lg:col-span-6">
-            <div className="relative grid grid-cols-5 grid-rows-6 gap-4 lg:h-[520px]">
-              <Reveal variant="scale" className="col-span-3 row-span-4 overflow-hidden rounded-2xl border border-line">
-                <Image
-                  src="/images/manufacturing/facility.jpg"
-                  alt="Mark Potentia manufacturing facility"
-                  width={1200}
-                  height={900}
-                  className="h-full w-full object-cover"
-                />
-              </Reveal>
-              <Reveal variant="scale" delay={0.12} className="col-span-2 row-span-3 overflow-hidden rounded-2xl border border-line">
-                <Image
-                  src="/images/manufacturing/cutting-sparks.jpg"
-                  alt="Precision metal fabrication"
-                  width={900}
-                  height={900}
-                  className="h-full w-full object-cover"
-                />
-              </Reveal>
-              <Reveal variant="scale" delay={0.2} className="col-span-2 row-span-3 overflow-hidden rounded-2xl border border-line">
-                <Image
-                  src="/images/manufacturing/engine-assembly.png"
-                  alt="Engine integration and assembly"
-                  width={900}
-                  height={900}
-                  className="h-full w-full object-cover"
-                />
-              </Reveal>
-              <Reveal variant="scale" delay={0.28} className="col-span-3 row-span-2 overflow-hidden rounded-2xl border border-line">
+            <div className="flex flex-col gap-4">
+              {/* Our genset — top, shown in full (no cropping) */}
+              <Reveal variant="scale" className="overflow-hidden rounded-2xl border border-line bg-ink">
                 <Image
                   src="/images/products/leypower-40kva-dark.jpg"
                   alt="LEYPOWER 40 kVA Ashok Leyland diesel generator by Mark Potentia"
                   width={1400}
                   height={600}
-                  className="h-full w-full object-cover"
+                  className="h-full w-full object-contain"
                 />
               </Reveal>
+              {/* Supporting fabrication imagery */}
+              <div className="grid grid-cols-3 gap-4">
+                <Reveal variant="scale" delay={0.12} className="aspect-[3/4] overflow-hidden rounded-2xl border border-line">
+                  <Image
+                    src="/images/manufacturing/facility.jpg"
+                    alt="Mark Potentia manufacturing facility"
+                    width={900}
+                    height={1200}
+                    className="h-full w-full object-cover"
+                  />
+                </Reveal>
+                <Reveal variant="scale" delay={0.2} className="aspect-[3/4] overflow-hidden rounded-2xl border border-line">
+                  <Image
+                    src="/images/manufacturing/cutting-sparks.jpg"
+                    alt="Precision metal fabrication"
+                    width={900}
+                    height={1200}
+                    className="h-full w-full object-cover"
+                  />
+                </Reveal>
+                <Reveal variant="scale" delay={0.28} className="aspect-[3/4] overflow-hidden rounded-2xl border border-line">
+                  <Image
+                    src="/images/manufacturing/engine-assembly.png"
+                    alt="Engine integration and assembly"
+                    width={900}
+                    height={1200}
+                    className="h-full w-full object-cover"
+                  />
+                </Reveal>
+              </div>
             </div>
           </div>
         </div>
