@@ -130,12 +130,12 @@ export default function Hero() {
         </div>
 
         {/* RIGHT — floating genset (30%) */}
-        <div className="relative flex items-center justify-center lg:col-span-3 lg:justify-start">
+        <div className="relative flex items-center justify-center lg:col-span-3 lg:justify-end">
           <motion.div
             initial={{ opacity: 0, x: 40 }}
             animate={{ opacity: 1, x: 0 }}
             transition={{ duration: 1, delay: 0.7, ease }}
-            className="relative mx-auto w-full max-w-[300px] sm:max-w-[400px] lg:mx-0 lg:w-[460px] lg:max-w-none lg:-translate-x-20"
+            className="relative mx-auto w-full max-w-[340px] sm:max-w-[440px] lg:mx-0 lg:w-[540px] lg:max-w-none"
           >
             {/* soft floor glow */}
             <div className="pointer-events-none absolute inset-x-6 bottom-2 h-8 rounded-[50%] bg-black/50 blur-2xl" />
