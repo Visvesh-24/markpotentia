@@ -15,21 +15,21 @@ export default function Leadership() {
           intro="Mark Potentia is led by a hands-on management team — present, accountable and personally invested in every client relationship."
         />
 
-        <div className="mt-14 grid gap-6 md:grid-cols-2">
+        <div className="mx-auto mt-14 grid max-w-5xl gap-6 md:grid-cols-2">
           {leadership.map((l, i) => (
             <Reveal key={l.name} delay={i * 0.1} variant="up">
-              <article className="group flex h-full gap-6 rounded-2xl border border-line bg-surface-1 p-6 transition-colors hover:border-white/15 md:p-8">
-                <div className="relative h-28 w-28 shrink-0 overflow-hidden rounded-2xl border border-line bg-ink md:h-36 md:w-36">
+              <article className="group flex h-full flex-col items-center gap-6 rounded-2xl border border-line bg-surface-1 p-6 text-center transition-colors hover:border-white/15 sm:flex-row sm:items-start sm:text-left md:p-8">
+                <div className="relative aspect-square w-40 shrink-0 overflow-hidden rounded-2xl border border-line bg-ink sm:w-36 md:w-40">
                   <Image
                     src={`/images/${l.image}`}
                     alt={l.name}
                     fill
-                    sizes="160px"
-                    className="portrait-treat object-cover transition duration-500 group-hover:scale-105"
+                    sizes="(min-width: 768px) 160px, 160px"
+                    className="portrait-treat object-cover object-[center_25%] transition duration-500 group-hover:scale-105"
                   />
                   <div className="absolute inset-0 bg-gradient-to-t from-ink/30 to-transparent" />
                 </div>
-                <div className="flex flex-col">
+                <div className="flex min-w-0 flex-1 flex-col">
                   <div className="font-mono text-[10px] uppercase tracking-label text-accent-soft">
                     {l.role}
                   </div>
